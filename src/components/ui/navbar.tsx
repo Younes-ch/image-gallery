@@ -1,4 +1,4 @@
-import logo from "../../assets/logo.png";
+import logo from "@/assets/logo.png";
 import SearchInput from "../SearchInput";
 import { ModeToggle } from "../mode-toggle";
 

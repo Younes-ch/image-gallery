@@ -10,6 +10,8 @@ const useImages = (imageQuery: ImageQuery) => useQuery({
     queryFn: () => apiClient.getAll({
         params: {
             q: imageQuery.query,
+            image_type: imageQuery.imageType,
+            safesearch: true
         }
     }),
 });
