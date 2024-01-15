@@ -11,6 +11,7 @@ const useImages = (imageQuery: ImageQuery) => useQuery({
         params: {
             q: imageQuery.query,
             image_type: imageQuery.imageType,
+            order: imageQuery.sortOrder,
             safesearch: true
         }
     }),
