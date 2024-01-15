@@ -19,7 +19,7 @@ const ImageCard = ({ image }: Props) => {
             <img
               src={image.webformatURL}
               alt=""
-              className="w-full h-[250px] object-cover"
+              className="w-full h-[250px] object-cover bg-slate-200"
             />
           </a>
           <div className="px-6 py-4 flex flex-col justify-between gap-5">
@@ -57,7 +57,7 @@ const ImageCard = ({ image }: Props) => {
         </div>
       </HoverCardTrigger>
       <HoverCardContent side="left" sideOffset={-70}>
-        <img src={image.webformatURL} />
+        <img src={image.webformatURL} className="bg-slate-200"/>
       </HoverCardContent>
     </HoverCard>
   );
