@@ -34,6 +34,10 @@ const GalleryGrid = () => {
         <h1 className="text-destructive scroll-m-20 text-4xl font-extrabold tracking-tight lg:text-5xl text-center">
           An error has occured.
         </h1>
+      ) : fetchedImagesCount === 0 ? (
+        <h1 className="text-primary scroll-m-20 text-4xl font-extrabold tracking-tight lg:text-5xl text-center">
+          No images were found.
+        </h1>
       ) : (
         <InfiniteScroll
           dataLength={fetchedImagesCount}
