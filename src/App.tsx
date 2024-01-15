@@ -1,9 +1,11 @@
-import { ModeToggle } from "./components/mode-toggle";
+import NavBar from "@/components/ui/navbar";
 
 function App() {
-  return <>
-    <ModeToggle />
-  </>
+  return (
+    <>
+      <NavBar />
+    </>
+  );
 }
 
 export default App;
