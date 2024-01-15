@@ -2,6 +2,7 @@ import Image from "@/entities/Image";
 import { Eye, DownloadIcon, Heart } from "lucide-react";
 import { Badge } from "./ui/badge";
 import { HoverCard, HoverCardTrigger, HoverCardContent } from "./ui/hover-card";
+import noImage from "@/assets/no-image.jpg";
 
 interface Props {
   image: Image;
@@ -13,7 +14,7 @@ const ImageCard = ({ image }: Props) => {
   return (
     <HoverCard>
       <HoverCardTrigger>
-        <div className="max-w-sm h-[450px] rounded overflow-hidden shadow-2xl border border-primary-foreground hover:scale-105 hover:transition-transform">
+        <div className="max-w-sm h-[450px] rounded overflow-hidden shadow-2xl border border-primary-foreground hover:scale-105 hover:transition-transform select-none">
           <img
             src={image.webformatURL}
             alt=""
@@ -22,7 +23,10 @@ const ImageCard = ({ image }: Props) => {
           <div className="px-6 py-4 flex flex-col justify-between gap-5">
             <div>
               <div className="flex gap-2">
-                <img src={image.userImageURL} className="rounded-full w-10 h-10" />
+                <img
+                  src={image.userImageURL || noImage}
+                  className="rounded-full w-10 h-10"
+                />
                 <h3 className="text-primary scroll-m-20 text-2xl font-semibold tracking-tight mb-5">
                   By {image.user}
                 </h3>
