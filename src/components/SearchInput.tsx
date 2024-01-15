@@ -9,9 +9,8 @@ const SearchInput = () => {
     <form
       onSubmit={(event) => {
         event.preventDefault();
-        if (ref.current?.value) {
+        if (ref.current) {
           setQuery(ref.current.value);
-          ref.current.value = "";
         }
       }}
     >

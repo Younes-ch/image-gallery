@@ -12,14 +12,16 @@ const ImageCard = ({ image }: Props) => {
   const tags = image.tags.split(", ");
 
   return (
-    <HoverCard>
+    <HoverCard openDelay={100} closeDelay={100}>
       <HoverCardTrigger>
         <div className="max-w-sm h-[450px] rounded overflow-hidden shadow-2xl border border-primary-foreground hover:scale-105 hover:transition-transform select-none">
-          <img
-            src={image.webformatURL}
-            alt=""
-            className="w-full h-[250px] object-cover"
-          />
+          <a href={image.webformatURL} target="__blank">
+            <img
+              src={image.webformatURL}
+              alt=""
+              className="w-full h-[250px] object-cover"
+            />
+          </a>
           <div className="px-6 py-4 flex flex-col justify-between gap-5">
             <div>
               <div className="flex gap-2">
