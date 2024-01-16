@@ -8,7 +8,7 @@ function App() {
   return (
     <>
       <NavBar />
-      <div className="flex flex-col ml-40 mb-5 gap-10 select-none">
+      <div className="flex flex-col ml-56 mb-5 gap-10 select-none">
         <GalleryHeading />
         <div className="flex gap-5">
           <ImageTypeSelector />
