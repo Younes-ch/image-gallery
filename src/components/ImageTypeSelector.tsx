@@ -9,11 +9,12 @@ import {
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
 import imageQueryStore from "@/stores/imageQueryStore";
+import { ChevronDown } from "lucide-react";
 
 const imageTypes = [
-  { value: "", label: "Photo" },
-  { value: "illustration", label: "Illustration" },
-  { value: "vector", label: "Vector" },
+  { value: "", label: "Photos" },
+  { value: "illustration", label: "Illustrations" },
+  { value: "vector", label: "Vectors" },
 ];
 
 const ImageTypeSelector = () => {
@@ -29,8 +30,9 @@ const ImageTypeSelector = () => {
   return (
     <DropdownMenu>
       <DropdownMenuTrigger asChild className="w-[200px]">
-        <Button variant="outline">
-          Image Type: {currentImageType?.label || "Photo"}
+        <Button variant="outline" className="flex justify-between">
+          {currentImageType?.label || "Photos"}
+          <ChevronDown />
         </Button>
       </DropdownMenuTrigger>
       <DropdownMenuContent className="w-[200px]">

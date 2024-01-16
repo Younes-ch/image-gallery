@@ -9,6 +9,7 @@ import {
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
 import imageQueryStore from "@/stores/imageQueryStore";
+import { ChevronDown } from "lucide-react";
 
 const sortOrders = [
   { value: "", label: "Popular" },
@@ -28,8 +29,9 @@ const SortSelector = () => {
   return (
     <DropdownMenu>
       <DropdownMenuTrigger asChild className="w-[200px]">
-        <Button variant="outline">
+        <Button variant="outline" className="flex justify-between">
           Order by: {currentSortOrder?.label || "Popular"}
+          <ChevronDown />
         </Button>
       </DropdownMenuTrigger>
       <DropdownMenuContent className="w-[200px]">
