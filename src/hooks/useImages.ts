@@ -1,12 +1,13 @@
 import Image from "@/entities/Image";
-import APIClient from "@/services/api-client";
+import APIClient, { FetchResponse } from "@/services/api-client";
 import { ImageQuery } from "@/stores/imageQueryStore";
 import { useInfiniteQuery } from "@tanstack/react-query";
+import { AxiosError } from "axios";
 import ms from "ms";
 
 const apiClient = new APIClient<Image>();
 
-const useImages = (imageQuery: ImageQuery) => useInfiniteQuery({
+const useImages = (imageQuery: ImageQuery) => useInfiniteQuery<FetchResponse<Image>, AxiosError>({
     queryKey: ["images", imageQuery],
     queryFn: ({ pageParam = 1 }) => apiClient.getAll({
         params: {
@@ -20,7 +21,8 @@ const useImages = (imageQuery: ImageQuery) => useInfiniteQuery({
     getNextPageParam: (lastPage, allPages) => {
         return lastPage.hits.length >= 1 ? allPages.length + 1 : undefined;
     },
-    staleTime: ms('24h')
+    staleTime: ms('24h'),
+    retry: 1,
 });
 
 export default useImages;
