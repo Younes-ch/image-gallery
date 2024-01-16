@@ -8,14 +8,14 @@ function App() {
   return (
     <>
       <NavBar />
-      <div className="flex flex-col ml-56 mb-5 gap-10 select-none">
+      <div className="flex flex-col items-center gap-4 select-none">
         <GalleryHeading />
-        <div className="flex gap-5">
+        <div className="flex flex-wrap gap-3 justify-center">
           <ImageTypeSelector />
           <SortSelector />
         </div>
+        <GalleryGrid />
       </div>
-      <GalleryGrid />
     </>
   );
 }
