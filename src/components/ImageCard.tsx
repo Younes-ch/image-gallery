@@ -14,7 +14,7 @@ const ImageCard = ({ image }: Props) => {
   return (
     <HoverCard openDelay={100} closeDelay={100}>
       <HoverCardTrigger>
-        <div className="max-w-sm h-[450px] rounded overflow-hidden shadow-2xl border border-primary-foreground hover:scale-105 hover:transition-transform select-none">
+        <div className="max-w-sm h-[460px] rounded overflow-hidden shadow-2xl border border-primary-foreground hover:scale-105 hover:transition-transform select-none">
           <a href={image.webformatURL} target="__blank">
             <img
               src={image.webformatURL}
