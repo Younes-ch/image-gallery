@@ -29,7 +29,7 @@ const SortSelector = () => {
     <DropdownMenu>
       <DropdownMenuTrigger asChild className="w-[200px]">
         <Button variant="outline">
-          Image Type: {currentSortOrder?.label || "Popular"}
+          Order by: {currentSortOrder?.label || "Popular"}
         </Button>
       </DropdownMenuTrigger>
       <DropdownMenuContent className="w-[200px]">
